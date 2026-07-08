@@ -1,0 +1,433 @@
+/* ==========================================================
+   GLOBAL
+========================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:#ffffff;
+
+    color:#111111;
+
+    line-height:1.7;
+
+}
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 60px;
+
+    background:#111A17;
+
+}
+
+.header-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+}
+
+.logo{
+
+    color:white;
+
+    font-size:28px;
+
+    font-weight:700;
+
+}
+
+.tag{
+
+    color:#cfcfcf;
+
+    font-size:14px;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+}
+
+nav{
+
+    display:flex;
+
+    gap:25px;
+
+}
+
+nav a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:15px;
+
+    transition:.25s;
+
+}
+
+nav a:hover{
+
+    opacity:.65;
+
+}
+
+/* ==========================================================
+   MAIN
+========================================================== */
+
+main{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:70px 40px;
+
+}
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.hero{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:70px;
+
+    margin-bottom:90px;
+
+}
+
+.hero-content{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:22px;
+
+}
+
+.small-title{
+
+    color:#00C67A;
+
+    letter-spacing:2px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+}
+
+.hero h1{
+
+    font-size:58px;
+
+    font-weight:800;
+
+}
+
+.intro{
+
+    max-width:520px;
+
+    color:#444;
+
+    font-size:18px;
+
+}
+
+.hero-image{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.hero-image img{
+
+    width:100%;
+
+    max-width:520px;
+
+    border-radius:24px;
+
+    object-fit:cover;
+
+}
+
+/* ==========================================================
+   STATS
+========================================================== */
+
+.stats{
+
+    display:flex;
+
+    gap:25px;
+
+    margin-top:15px;
+
+    flex-wrap:wrap;
+
+}
+
+.stat{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:6px;
+
+}
+
+.stat h3{
+
+    font-size:14px;
+
+    color:#777;
+
+    text-transform:uppercase;
+
+}
+
+.stat p{
+
+    font-size:20px;
+
+    font-weight:700;
+
+}
+
+/* ==========================================================
+   SECTIONS
+========================================================== */
+
+.section{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:35px;
+
+    margin-bottom:80px;
+
+}
+
+.section h2{
+
+    font-size:36px;
+
+}
+
+/* ==========================================================
+   CARDS
+========================================================== */
+
+.cards{
+
+    display:flex;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+
+}
+
+.card{
+
+    flex:1;
+
+    min-width:260px;
+
+    padding:28px;
+
+    border:1px solid #EAEAEA;
+
+}
+
+.card h3{
+
+    margin-bottom:15px;
+
+    font-size:22px;
+
+}
+
+.card p{
+
+    color:#555;
+
+}
+
+/* ==========================================================
+   PROJECTS
+========================================================== */
+
+.project-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.project{
+
+    border:1px solid #EAEAEA;
+
+    padding:30px;
+
+}
+
+.project h3{
+
+    margin-bottom:10px;
+
+    font-size:24px;
+
+}
+
+.project p{
+
+    color:#555;
+
+}
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+footer{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:45px;
+
+    border-top:1px solid #EAEAEA;
+
+    color:#555;
+
+}
+
+footer small{
+
+    color:#888;
+
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media(max-width:900px){
+
+    header{
+
+        flex-direction:column;
+
+        gap:20px;
+
+        padding:25px;
+
+    }
+
+    nav{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+    }
+
+    .hero{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+    .hero-content{
+
+        align-items:center;
+
+    }
+
+    .intro{
+
+        max-width:100%;
+
+    }
+
+    .stats{
+
+        justify-content:center;
+
+    }
+
+    .cards{
+
+        flex-direction:column;
+
+    }
+
+    main{
+
+        padding:40px 25px;
+
+    }
+
+}
