@@ -1,11 +1,12 @@
 /* ==========================================================
-   GLOBAL
+   GLOBAL STYLES
 ========================================================== */
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+    font-family:'Inter',sans-serif;
 }
 
 html{
@@ -13,14 +14,40 @@ html{
 }
 
 body{
+    background:#f5f7fb;
+    color:#222;
+    overflow-x:hidden;
+}
 
-    font-family:'Inter',sans-serif;
+.website{
 
-    background:#ffffff;
+    display:flex;
 
-    color:#111111;
+    flex-direction:column;
 
-    line-height:1.7;
+    min-height:100vh;
+
+    transition:
+        background .6s ease,
+        color .6s ease;
+
+}
+
+main{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:80px;
+
+    width:100%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:60px 40px;
 
 }
 
@@ -36,9 +63,19 @@ header{
 
     align-items:center;
 
-    padding:18px 60px;
+    padding:22px 60px;
 
     background:#111A17;
+
+    color:white;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+    box-shadow:0 5px 18px rgba(0,0,0,.15);
 
 }
 
@@ -54,19 +91,19 @@ header{
 
 .logo{
 
-    color:white;
+    font-size:32px;
 
-    font-size:28px;
+    font-weight:800;
 
-    font-weight:700;
+    letter-spacing:1px;
 
 }
 
 .tag{
 
-    color:#cfcfcf;
+    font-size:13px;
 
-    font-size:14px;
+    color:#cccccc;
 
     text-transform:uppercase;
 
@@ -74,43 +111,167 @@ header{
 
 }
 
+/* ==========================================================
+   NAVIGATION
+========================================================== */
+
 nav{
 
     display:flex;
 
-    gap:25px;
+    align-items:center;
+
+    gap:20px;
 
 }
 
 nav a{
 
-    color:white;
-
     text-decoration:none;
 
-    font-size:15px;
+    color:white;
 
-    transition:.25s;
+    font-weight:500;
+
+    transition:
+        color .25s,
+        transform .25s;
 
 }
 
 nav a:hover{
 
-    opacity:.65;
+    color:#00C67A;
+
+    transform:translateY(-2px);
 
 }
 
 /* ==========================================================
-   MAIN
+   SUBSCRIBE BUTTON
 ========================================================== */
 
-main{
+.subscribe-wrapper{
 
-    max-width:1200px;
+    display:flex;
 
-    margin:auto;
+    align-items:center;
 
-    padding:70px 40px;
+}
+
+.subscribe-toggle{
+
+    display:none;
+
+}
+
+.subscribe-btn{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    width:155px;
+
+    height:46px;
+
+    border-radius:999px;
+
+    background:#00C67A;
+
+    color:white;
+
+    cursor:pointer;
+
+    overflow:hidden;
+
+    position:relative;
+
+    transition:
+        transform .3s,
+        box-shadow .3s,
+        background .3s;
+
+}
+
+.subscribe-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 24px rgba(0,198,122,.35);
+
+}
+
+.subscribe-text,
+.subscribed-text{
+
+    position:absolute;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.subscribed-text{
+
+    opacity:0;
+
+    transform:translateY(18px);
+
+}
+
+.subscribe-toggle:checked + .subscribe-btn{
+
+    background:#2d6cdf;
+
+    animation:subscribePop .5s ease;
+
+}
+
+.subscribe-toggle:checked + .subscribe-btn .subscribe-text{
+
+    opacity:0;
+
+    transform:translateY(-18px);
+
+}
+
+.subscribe-toggle:checked + .subscribe-btn .subscribed-text{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+@keyframes subscribePop{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    40%{
+
+        transform:scale(1.08);
+
+    }
+
+    70%{
+
+        transform:scale(.96);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
 
 }
 
@@ -126,9 +287,7 @@ main{
 
     align-items:center;
 
-    gap:70px;
-
-    margin-bottom:90px;
+    gap:60px;
 
 }
 
@@ -148,11 +307,11 @@ main{
 
     color:#00C67A;
 
-    letter-spacing:2px;
-
-    font-size:13px;
+    font-size:14px;
 
     font-weight:700;
+
+    letter-spacing:2px;
 
 }
 
@@ -162,15 +321,17 @@ main{
 
     font-weight:800;
 
+    color:#111A17;
+
 }
 
 .intro{
 
-    max-width:520px;
-
-    color:#444;
-
     font-size:18px;
+
+    color:#555;
+
+    line-height:1.8;
 
 }
 
@@ -181,6 +342,8 @@ main{
     display:flex;
 
     justify-content:center;
+
+    align-items:center;
 
 }
 
@@ -194,6 +357,14 @@ main{
 
     object-fit:cover;
 
+    transition:.5s;
+
+}
+
+.hero-image img:hover{
+
+    transform:scale(1.02);
+
 }
 
 /* ==========================================================
@@ -204,9 +375,7 @@ main{
 
     display:flex;
 
-    gap:25px;
-
-    margin-top:15px;
+    gap:35px;
 
     flex-wrap:wrap;
 
@@ -224,9 +393,11 @@ main{
 
 .stat h3{
 
-    font-size:14px;
-
     color:#777;
+
+    font-size:13px;
+
+    letter-spacing:1px;
 
     text-transform:uppercase;
 
@@ -234,12 +405,117 @@ main{
 
 .stat p{
 
-    font-size:20px;
+    font-size:22px;
 
     font-weight:700;
 
 }
 
+/* ==========================================================
+   HORROR MODE BUTTON
+========================================================== */
+
+.horror-toggle{
+
+    display:none;
+
+}
+
+.horror-button{
+
+    position:fixed;
+
+    bottom:25px;
+
+    right:25px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    width:170px;
+
+    height:55px;
+
+    border-radius:999px;
+
+    background:#111A17;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-weight:700;
+
+    transition:
+        transform .3s,
+        background .3s,
+        box-shadow .3s;
+
+    z-index:5000;
+
+}
+
+.horror-button:hover{
+
+    transform:translateY(-4px);
+
+    background:#8b0000;
+
+    box-shadow:0 0 25px rgba(255,0,0,.35);
+
+}
+
+.horror-toggle:checked ~ .website{
+
+    background:#0b0b0b;
+
+    color:#eeeeee;
+
+}
+
+.horror-toggle:checked ~ .website header{
+
+    background:#000000;
+
+}
+
+.horror-toggle:checked ~ .website .logo{
+
+    color:#ff4444;
+
+    text-shadow:0 0 12px rgba(255,0,0,.7);
+
+}
+
+.horror-toggle:checked ~ .website nav a{
+
+    color:#ff6666;
+
+}
+
+.horror-toggle:checked ~ .website .hero h1{
+
+    color:#ff4444;
+
+}
+
+.horror-toggle:checked ~ .website .intro{
+
+    color:#dddddd;
+
+}
+
+.horror-toggle:checked ~ .website .hero-image img{
+
+    filter:
+        grayscale(100%)
+        brightness(.45)
+        contrast(1.5);
+
+}
 /* ==========================================================
    SECTIONS
 ========================================================== */
@@ -250,15 +526,19 @@ main{
 
     flex-direction:column;
 
-    gap:35px;
-
-    margin-bottom:80px;
+    gap:30px;
 
 }
 
 .section h2{
 
-    font-size:36px;
+    font-size:42px;
+
+    font-weight:800;
+
+    color:#111A17;
+
+    transition:.4s;
 
 }
 
@@ -270,7 +550,7 @@ main{
 
     display:flex;
 
-    gap:30px;
+    gap:25px;
 
     flex-wrap:wrap;
 
@@ -280,61 +560,526 @@ main{
 
     flex:1;
 
-    min-width:260px;
-
-    padding:28px;
-
-    border:1px solid #EAEAEA;
-
-}
-
-.card h3{
-
-    margin-bottom:15px;
-
-    font-size:22px;
-
-}
-
-.card p{
-
-    color:#555;
-
-}
-
-/* ==========================================================
-   PROJECTS
-========================================================== */
-
-.project-list{
+    min-width:280px;
 
     display:flex;
 
     flex-direction:column;
 
-    gap:20px;
-
-}
-
-.project{
-
-    border:1px solid #EAEAEA;
+    gap:16px;
 
     padding:30px;
 
+    background:#ffffff;
+
+    border-radius:20px;
+
+    border:1px solid #e6e6e6;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        background .5s ease,
+        border-color .5s ease;
+
 }
 
-.project h3{
+.card:hover{
 
-    margin-bottom:10px;
+    transform:translateY(-8px);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.12);
+
+}
+
+.card h3{
 
     font-size:24px;
 
+    color:#111A17;
+
 }
 
-.project p{
+.card p{
 
-    color:#555;
+    color:#555555;
+
+    line-height:1.7;
+
+}
+
+/* ==========================================================
+   QUIZ
+========================================================== */
+
+form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:22px;
+
+}
+
+.form-row{
+
+    display:flex;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.form-group{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+}
+
+.form-column{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+}
+
+label{
+
+    font-weight:600;
+
+    color:#222;
+
+}
+
+input[type="text"],
+input[type="number"],
+textarea{
+
+    width:100%;
+
+    padding:14px 16px;
+
+    border:2px solid #dddddd;
+
+    border-radius:12px;
+
+    background:#ffffff;
+
+    font-size:15px;
+
+    transition:
+        border-color .3s,
+        box-shadow .3s,
+        background .4s,
+        color .4s;
+
+}
+
+textarea{
+
+    min-height:140px;
+
+    resize:vertical;
+
+}
+
+input:focus,
+textarea:focus{
+
+    outline:none;
+
+    border-color:#00C67A;
+
+    box-shadow:0 0 15px rgba(0,198,122,.25);
+
+}
+
+/* ==========================================================
+   CHECKBOXES
+========================================================== */
+
+.checkbox-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+.checkbox-group h3{
+
+    margin-bottom:5px;
+
+    color:#111A17;
+
+}
+
+.checkbox-group label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    cursor:pointer;
+
+}
+
+.checkbox-group input{
+
+    accent-color:#00C67A;
+
+}
+
+/* ==========================================================
+   HORROR MODE
+========================================================== */
+
+.horror-toggle:checked ~ .website .section h2{
+
+    color:#ff4444;
+
+    text-shadow:0 0 12px rgba(255,0,0,.55);
+
+}
+
+.horror-toggle:checked ~ .website .card{
+
+    background:#131313;
+
+    border-color:#5d0000;
+
+    box-shadow:0 0 20px rgba(255,0,0,.08);
+
+}
+
+.horror-toggle:checked ~ .website .card h3{
+
+    color:#ff6666;
+
+}
+
+.horror-toggle:checked ~ .website .card p{
+
+    color:#dddddd;
+
+}
+
+.horror-toggle:checked ~ .website label{
+
+    color:#eeeeee;
+
+}
+
+.horror-toggle:checked ~ .website input[type="text"],
+.horror-toggle:checked ~ .website input[type="number"],
+.horror-toggle:checked ~ .website textarea{
+
+    background:#1b1b1b;
+
+    color:#ffffff;
+
+    border-color:#5d0000;
+
+}
+
+.horror-toggle:checked ~ .website input::placeholder,
+.horror-toggle:checked ~ .website textarea::placeholder{
+
+    color:#999999;
+
+}
+
+.horror-toggle:checked ~ .website .checkbox-group h3{
+
+    color:#ff5555;
+
+}
+
+.horror-toggle:checked ~ .website .checkbox-group input{
+
+    accent-color:#ff4444;
+
+}
+/* ==========================================================
+   BUTTONS
+========================================================== */
+
+.buttons{
+
+    display:flex;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+    margin-top:10px;
+
+}
+
+button{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-width:170px;
+
+    height:52px;
+
+    border:none;
+
+    border-radius:999px;
+
+    background:#00C67A;
+
+    color:#ffffff;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        box-shadow .25s ease;
+
+}
+
+button:hover{
+
+    transform:translateY(-4px);
+
+    background:#00a866;
+
+    box-shadow:0 12px 28px rgba(0,198,122,.35);
+
+}
+
+button:active{
+
+    transform:translateY(-1px);
+
+}
+
+/* ==========================================================
+   HORROR MODE OVERLAY
+========================================================== */
+
+.website::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    opacity:0;
+
+    transition:opacity .6s ease;
+
+    background:
+        radial-gradient(circle at center,
+        rgba(255,0,0,.08),
+        rgba(0,0,0,.92));
+
+    z-index:900;
+
+}
+
+.website::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    opacity:0;
+
+    transition:opacity .6s ease;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent 0px,
+            transparent 3px,
+            rgba(255,255,255,.02) 4px
+        );
+
+    z-index:901;
+
+}
+
+.horror-toggle:checked ~ .website::before{
+
+    opacity:1;
+
+}
+
+.horror-toggle:checked ~ .website::after{
+
+    opacity:.9;
+
+    animation:staticNoise .18s steps(2) infinite;
+
+}
+
+/* ==========================================================
+   HORROR MODE EFFECTS
+========================================================== */
+
+.horror-toggle:checked ~ .website{
+
+    position:relative;
+
+    overflow-x:hidden;
+
+}
+
+.horror-toggle:checked ~ .website main{
+
+    animation:slowPulse 8s ease-in-out infinite;
+
+}
+
+.horror-toggle:checked ~ .website .hero h1{
+
+    text-shadow:
+        0 0 12px rgba(255,0,0,.75),
+        0 0 28px rgba(255,0,0,.45);
+
+    animation:titleGlitch 5s infinite;
+
+}
+
+.horror-toggle:checked ~ .website .logo{
+
+    animation:titleGlitch 6s infinite;
+
+}
+
+.horror-toggle:checked ~ .website footer{
+
+    background:#050505;
+
+    color:#cccccc;
+
+    border-top:1px solid #330000;
+
+}
+
+.horror-toggle:checked ~ .website .hero-image img{
+
+    animation:floatImage 8s ease-in-out infinite;
+
+}
+
+/* ==========================================================
+   ANIMATIONS
+========================================================== */
+
+@keyframes titleGlitch{
+
+    0%,100%{
+
+        transform:translateX(0);
+
+    }
+
+    2%{
+
+        transform:translateX(-2px);
+
+    }
+
+    4%{
+
+        transform:translateX(3px);
+
+    }
+
+    6%{
+
+        transform:translateX(-1px);
+
+    }
+
+    8%{
+
+        transform:translateX(0);
+
+    }
+
+}
+
+@keyframes staticNoise{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(5px);
+
+    }
+
+}
+
+@keyframes slowPulse{
+
+    0%,100%{
+
+        filter:brightness(1);
+
+    }
+
+    50%{
+
+        filter:brightness(.88);
+
+    }
+
+}
+
+@keyframes floatImage{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
 
 }
 
@@ -352,19 +1097,33 @@ footer{
 
     align-items:center;
 
-    gap:12px;
+    gap:10px;
 
-    padding:45px;
+    padding:45px 20px;
 
-    border-top:1px solid #EAEAEA;
+    margin-top:80px;
 
-    color:#555;
+    background:#111A17;
+
+    color:white;
+
+    text-align:center;
 
 }
 
-footer small{
+footer h2{
 
-    color:#888;
+    font-size:30px;
+
+    font-weight:700;
+
+}
+
+footer p{
+
+    color:#cccccc;
+
+    font-size:15px;
 
 }
 
@@ -372,7 +1131,7 @@ footer small{
    RESPONSIVE
 ========================================================== */
 
-@media(max-width:900px){
+@media (max-width:900px){
 
     header{
 
@@ -406,27 +1165,69 @@ footer small{
 
     }
 
-    .intro{
-
-        max-width:100%;
-
-    }
-
-    .stats{
-
-        justify-content:center;
-
-    }
-
     .cards{
 
         flex-direction:column;
 
     }
 
+    .form-row{
+
+        flex-direction:column;
+
+    }
+
+    .buttons{
+
+        flex-direction:column;
+
+    }
+
+    button{
+
+        width:100%;
+
+    }
+
+    .horror-button{
+
+        width:150px;
+
+        height:50px;
+
+        right:15px;
+
+        bottom:15px;
+
+        font-size:14px;
+
+    }
+
     main{
 
-        padding:40px 25px;
+        padding:40px 20px;
+
+    }
+
+}
+
+@media (max-width:600px){
+
+    .hero h1{
+
+        font-size:42px;
+
+    }
+
+    .section h2{
+
+        font-size:30px;
+
+    }
+
+    .hero-image img{
+
+        max-width:100%;
 
     }
 

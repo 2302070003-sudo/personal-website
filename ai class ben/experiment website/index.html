@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Ben | Personal Website</title>
+    <title>Ben's Personal Website</title>
 
     <link rel="stylesheet" href="style.css">
 
@@ -20,15 +21,32 @@
 
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- ==========================================================
+     HORROR MODE TOGGLE
+========================================================== -->
+
+<input
+    type="checkbox"
+    id="horror-mode"
+    class="horror-toggle">
+
+<div class="website">
+
+<!-- ==========================================================
+     HEADER
+========================================================== -->
 
 <header>
 
     <div class="header-left">
 
-        <h2 class="logo">Ben.</h2>
+        <h2 class="logo">
+            Ben.
+        </h2>
 
-        <span class="tag">personal website</span>
+        <span class="tag">
+            Personal Website
+        </span>
 
     </div>
 
@@ -36,201 +54,366 @@
 
         <a href="#about">About</a>
 
-        <a href="#interests">Interests</a>
+        <a href="#favorites">Favorites</a>
 
         <a href="#projects">Projects</a>
+
+        <a href="#quiz">Quiz</a>
+
+        <div class="subscribe-wrapper">
+
+            <input
+                type="checkbox"
+                id="subscribe-toggle"
+                class="subscribe-toggle">
+
+            <label
+                for="subscribe-toggle"
+                class="subscribe-btn">
+
+                <span class="subscribe-text">
+                    Subscribe
+                </span>
+
+                <span class="subscribed-text">
+                    ✓ Subscribed
+                </span>
+
+            </label>
+
+        </div>
 
     </nav>
 
 </header>
 
-<!-- ================= MAIN ================= -->
+<!-- ==========================================================
+     MAIN
+========================================================== -->
 
 <main>
 
-    <!-- ================= HERO ================= -->
+<!-- ==========================================================
+     HERO
+========================================================== -->
 
-    <section class="hero">
+<section
+    class="hero"
+    id="about">
 
-        <div class="hero-content">
+    <div class="hero-content">
 
-            <span class="small-title">
+        <span class="small-title">
+            ABOUT ME
+        </span>
 
-                ABOUT ME
+        <h1>
+            Hi, I'm Ben 👋
+        </h1>
 
-            </span>
+        <p class="intro">
 
-            <h1>
+            Welcome to my personal website!
 
-                Hi, I'm Ben.
+            I'm <strong>5 days old</strong> and I love
+            playing games, eating food, racing go karts,
+            playing football, and sleeping.
 
-            </h1>
+            I also enjoy creating fun programming projects
+            and learning new things every day.
 
-            <p class="intro">
+        </p>
 
-                I'm only <strong>5 days old</strong>, I enjoy playing games,
-                racing go karts and sleeping. My favourite sport is football
-                and I love building programming projects.
+        <div class="stats">
 
-            </p>
+            <div class="stat">
 
-            <div class="stats">
+                <h3>Age</h3>
 
-                <div class="stat">
+                <p>5 Days</p>
 
-                    <h3>Age</h3>
+            </div>
 
-                    <p>5 Days</p>
+            <div class="stat">
 
-                </div>
+                <h3>Favourite Sport</h3>
 
-                <div class="stat">
+                <p>Football ⚽</p>
 
-                    <h3>Favourite Sport</h3>
+            </div>
 
-                    <p>Football</p>
+            <div class="stat">
 
-                </div>
+                <h3>Favourite Activity</h3>
 
-                <div class="stat">
-
-                    <h3>Favourite Activity</h3>
-
-                    <p>Sleeping</p>
-
-                </div>
+                <p>Sleeping 😴</p>
 
             </div>
 
         </div>
 
-        <div class="hero-image">
+    </div>
 
-            <img
-            src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80"
+    <div class="hero-image">
+
+        <img
+            src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1000&q=80"
             alt="Gaming setup">
 
-        </div>
+    </div>
 
-    </section>
+</section>
+<!-- ==========================================================
+     FAVORITES
+========================================================== -->
 
-    <!-- ================= INTERESTS ================= -->
-
-    <section
+<section
     class="section"
-    id="interests">
+    id="favorites">
 
-        <h2>
+    <h2>Things I Like</h2>
 
-            Things I Enjoy
+    <div class="cards">
 
-        </h2>
+        <article class="card">
 
-        <div class="cards">
+            <h3>🎮 Playing Games</h3>
 
-            <article class="card">
+            <p>
+                Gaming is one of my favourite hobbies.
+                I enjoy exploring new worlds, solving
+                puzzles, and creating games of my own.
+            </p>
 
-                <h3>🎮 Games</h3>
+        </article>
 
-                <p>
+        <article class="card">
 
-                    Playing games is one of my favourite hobbies.
+            <h3>⚽ Football</h3>
 
-                </p>
+            <p>
+                Football is my favourite sport.
+                I enjoy watching matches and playing
+                whenever I get the chance.
+            </p>
 
-            </article>
+        </article>
 
-            <article class="card">
+        <article class="card">
 
-                <h3>🏎️ Go Karts</h3>
+            <h3>🏎 Racing Go Karts</h3>
 
-                <p>
+            <p>
+                I love the speed and excitement of
+                racing go karts. It's one of my
+                favourite activities.
+            </p>
 
-                    I enjoy racing go karts whenever I can.
+        </article>
 
-                </p>
+        <article class="card">
 
-            </article>
+            <h3>😴 Sleeping</h3>
 
-            <article class="card">
+            <p>
+                After a long day of gaming and coding,
+                nothing beats getting some sleep!
+            </p>
 
-                <h3>😴 Sleeping</h3>
+        </article>
 
-                <p>
+    </div>
 
-                    My favourite activity is getting some sleep.
+</section>
 
-                </p>
+<!-- ==========================================================
+     PROJECTS
+========================================================== -->
 
-            </article>
-
-        </div>
-
-    </section>
-
-    <!-- ================= PROJECTS ================= -->
-
-    <section
+<section
     class="section"
     id="projects">
 
-        <h2>
+    <h2>My Projects</h2>
 
-            Projects
+    <div class="cards">
 
-        </h2>
+        <article class="card">
 
-        <div class="project-list">
+            <h3>🐍 Snake Game</h3>
 
-            <article class="project">
+            <p>
+                One of my first programming projects
+                was a classic Snake game where the
+                player grows longer as they collect food.
+            </p>
 
-                <h3>Snake Game</h3>
+        </article>
 
-                <p>
+        <article class="card">
 
-                    A classic snake game built as one of my first programming
-                    projects.
+            <h3>👾 Monster Maze</h3>
 
-                </p>
+            <p>
+                I also created a maze game where
+                <strong>three monsters constantly chase
+                the player</strong>, making every round
+                exciting and challenging.
+            </p>
 
-            </article>
+        </article>
 
-            <article class="project">
+        <article class="card">
 
-                <h3>Maze Game</h3>
+            <h3>💻 Learning Web Development</h3>
 
-                <p>
+            <p>
+                I enjoy learning HTML and CSS and
+                designing modern websites with smooth
+                animations, responsive layouts, and
+                creative user interfaces.
+            </p>
 
-                    A maze adventure where three monsters constantly chase the
-                    player until they escape.
+        </article>
 
-                </p>
+    </div>
 
-            </article>
+</section>
+
+<!-- ==========================================================
+     QUIZ
+========================================================== -->
+
+<section
+    class="section"
+    id="quiz">
+
+    <h2>Tell Me About Yourself</h2>
+
+    <form>
+
+        <div class="form-row">
+
+            <div class="form-group">
+
+                <label>Your Name</label>
+
+                <input
+                    type="text"
+                    placeholder="Enter your name">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Your Age</label>
+
+                <input
+                    type="number"
+                    placeholder="Enter your age">
+
+            </div>
 
         </div>
 
-    </section>
+        <div class="form-row">
+
+            <div class="form-group">
+
+                <label>Favourite Hobby</label>
+
+                <input
+                    type="text"
+                    placeholder="Gaming, Sports, Music...">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Favourite Food</label>
+
+                <input
+                    type="text"
+                    placeholder="Pizza, Burgers...">
+
+            </div>
+
+        </div>
+
+        <div class="form-column">
+
+            <label>Tell me about yourself</label>
+
+            <textarea
+                rows="5"
+                placeholder="Write something about yourself..."></textarea>
+
+        </div>
+
+        <div class="checkbox-group">
+
+            <h3>Activities You Enjoy</h3>
+
+            <label><input type="checkbox"> Gaming</label>
+
+            <label><input type="checkbox"> Football</label>
+
+            <label><input type="checkbox"> Reading</label>
+
+            <label><input type="checkbox"> Music</label>
+
+            <label><input type="checkbox"> Sleeping</label>
+
+        </div>
+
+        <div class="buttons">
+
+            <button type="submit">
+                Submit
+            </button>
+
+            <button type="reset">
+                Reset
+            </button>
+
+        </div>
+
+    </form>
+
+</section>
 
 </main>
 
-<!-- ================= FOOTER ================= -->
+<!-- ==========================================================
+     HORROR MODE BUTTON
+========================================================== -->
+
+<label
+    for="horror-mode"
+    class="horror-button">
+
+    🌙 Horror Mode
+
+</label>
+
+<!-- ==========================================================
+     FOOTER
+========================================================== -->
 
 <footer>
 
+    <h2>
+        Thank You For Viewing!
+    </h2>
+
     <p>
-
-        Thanks for visiting my website.
-
+        Ben's Website
     </p>
-
-    <small>
-
-        © Ben's Website
-
-    </small>
 
 </footer>
 
+</div>
+
 </body>
+
 </html>
